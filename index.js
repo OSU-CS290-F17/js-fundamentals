@@ -103,3 +103,90 @@ for (var j = 0; j < array2.length; j++) {
 
 console.log("'1,2,3,4'.split(','):", '1,2,3,4'.split(','));
 console.log("[1,2,3,4].join(','):", [1,2,3,4].join(','));
+
+function printArrayElem(elem, idx) {
+  console.log("Element", idx, "is:", elem);
+}
+
+console.log("Using forEach():");
+array2.forEach(printArrayElem);
+
+function multBy2(val) {
+  return val * 2;
+}
+
+var array1Times2 = array1.map(multBy2);
+console.log("array1Times2:", array1Times2);
+
+array1.push(4);
+array1.push(5);
+array1.push(6);
+console.log("array1:", array1);
+
+var popped = array1.pop();
+console.log("popped:", popped);
+array1.pop();
+console.log("array1:", array1);
+
+array1.unshift(-4);
+array1.unshift(-5);
+array1.unshift(-6);
+console.log("array1:", array1);
+
+array1.shift();
+array1.shift();
+console.log("array1:", array1);
+
+console.log("");
+console.log("============ Functions");
+console.log("");
+
+function addThreeThings(a, b, c) {
+  // console.log("arguments:", arguments);
+  return a + b + c;
+}
+
+console.log("addThreeThings(1, 2, 3):", addThreeThings(1, 2, 3));
+console.log("addThreeThings('1', '2', '3'):", addThreeThings('1', '2', '3'));
+console.log("addThreeThings(1, 2, 3) + 1:", addThreeThings(1, 2, 3) + 1);
+console.log("addThreeThings(1, 2, 3):", addThreeThings(1, 2, 3));
+console.log("addThreeThings(1, 2):", addThreeThings(1, 2));
+
+function addManyThings() {
+  var sum = arguments[0];
+  for (var i = 1; i < arguments.length; i++) {
+    sum += arguments[i];
+  }
+  return sum;
+}
+
+console.log("addManyThings(1, 2, 3):", addManyThings(1, 2, 3));
+console.log("addManyThings(1, 2, 3, 4, 5, 6):", addManyThings(1, 2, 3, 4, 5, 6));
+
+var value = 5;
+array1.forEach(function (elem) {
+  // var value = -100000;
+  value += elem;
+  console.log(value);
+});
+
+console.log("value:", value);
+
+console.log("");
+console.log("============ Objects");
+console.log("");
+
+var luke = {
+  firstName: "Luke",
+  lastName: "Skywalker",
+  age: 22,
+  getFullName: function () {
+    return this.firstName + " " + this.LastName;
+  }
+};
+
+console.log("luke['firstName']:", luke['firstName']);
+console.log("luke.firstName:", luke.firstName);
+
+var key = 'lastName';
+console.log("luke[key]:", luke[key]);
