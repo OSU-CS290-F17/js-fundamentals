@@ -181,7 +181,7 @@ var luke = {
   lastName: "Skywalker",
   age: 22,
   getFullName: function () {
-    return this.firstName + " " + this.LastName;
+    return this.firstName + " " + this.lastName;
   }
 };
 
@@ -189,4 +189,23 @@ console.log("luke['firstName']:", luke['firstName']);
 console.log("luke.firstName:", luke.firstName);
 
 var key = 'lastName';
+console.log("key:", key);
 console.log("luke[key]:", luke[key]);
+
+console.log("luke.getFullName():", luke.getFullName());
+
+function Person(firstName, lastName, age) {
+  this.firstName = firstName;
+  this.lastName = lastName;
+  this.age = age;
+}
+
+Person.prototype.getFullName = function () {
+  return this.firstName + " " + this.lastName;
+};
+
+var person = new Person("Leia", "Organa", 23);
+console.log("person:", person);
+console.log("person.getFullName():", person.getFullName());
+
+console.log("Person:", Person);
